@@ -9,5 +9,24 @@ To setup the project on local machine in development environment:-
    Go to project root directory and run the command ./gradlew bootRun
 
 # Project Structure
+1) Two Contollers InventoryController and OrdersController.
+2) InventoryController exposes the following apis:-
+a) http://localhost:8080/addItem 
+POST
+{
+"itemName":"Lenovo Thinkpad",
+"price":20000.00,
+"numberOfItems":2,
+"seller":"BlueCorp 2",
+"itemType":"LAPTOP"
+}
 
+Note: Currently there are two ItemTypes:- LAPTOP & BOOK
 
+b) http://localhost:8080/deleteItemOfSeller/{item_name}/{seller} 
+   DELETE
+   
+c) http://localhost:8080/getAllOrders?pageIndex=0&size=2
+GET
+{pageIndec and Size} follow standard pagination settings
+   
