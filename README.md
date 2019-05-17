@@ -21,12 +21,46 @@ POST
 "itemType":"LAPTOP"
 }
 
+If item with a given seller is already present then new no new record will be created but number of items in the already present record will get upated.
+
 Note: Currently there are two ItemTypes:- LAPTOP & BOOK
 
 b) http://localhost:8080/deleteItemOfSeller/{item_name}/{seller} 
    DELETE
    
-c) http://localhost:8080/getAllOrders?pageIndex=0&size=2
+c) http://localhost:8080/getAllItems?pageIndex=0&size=2
 GET
 {pageIndec and Size} follow standard pagination settings
    
+3) OrdersController exposes the following apis:-
+a) http://localhost:8080/addToCart 
+POST
+{
+"buyerEmail":"vigyattripathi@gmail.com",
+"itemsOrderedSet":[
+	{
+		"itemId":2,
+		"numberOfItems":1,
+		"priceOfItem":200.0
+	},
+	{
+		"itemId":3,
+		"numberOfItems":1,
+		"priceOfItem":20000.0
+	}
+]
+}
+
+ItemId is the autoIncrement datatable id
+b) http://localhost:8080/getAllOrders?pageIndex=0&size=2
+GET
+
+c) http://localhost:8080/placeOrder/{order_id}
+PUT
+order_id is autoIncrement db id
+
+d) http://localhost:8080/cancelOrder/{order_id}
+PUT
+
+# Few things to know
+1)
