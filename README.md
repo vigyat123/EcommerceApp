@@ -47,22 +47,22 @@ a) http://localhost:8080/addToCart
 POST
 
 
-{
-    "buyerEmail":"vigyattripathi@gmail.com",
-    "itemsOrderedSet":[
+    {
+        "buyerEmail":"vigyattripathi@gmail.com",
+        "itemsOrderedSet":[
 
-	    {
-		    "itemId":2,
-		    "numberOfItems":1,
-	        "priceOfItem":200.0
-	    },
-	    {
-		    "itemId":3,
-		    "numberOfItems":1,
-		    "priceOfItem":20000.0
-	    }
-    ]
-}
+	        {
+		        "itemId":2,
+		        "numberOfItems":1,
+	            "priceOfItem":200.0
+	        },
+	        {
+		        "itemId":3,
+		        "numberOfItems":1,
+		        "priceOfItem":20000.0
+	        }
+        ]
+    }
 
 
 ItemId is the autoIncrement datatable id
