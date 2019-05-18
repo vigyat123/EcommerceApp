@@ -42,6 +42,12 @@ public class InventoryService {
         }
     }
 
+    public void editItem(Inventory inventory, Long id, InventoryEntity oldEntity) {
+            InventoryEntity newEntity = InventoryMapper.mapOverOldEntity(inventory, oldEntity);
+
+            inventoryRepository.save(newEntity);
+    }
+
     public InventoryPage getAllItems(final Integer pageIndex,
                                      final Integer size) {
         final Pageable pageRequest = PageRequest.of(pageIndex, size, Sort.Direction.ASC, "id");

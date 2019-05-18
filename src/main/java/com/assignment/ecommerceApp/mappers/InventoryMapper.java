@@ -18,6 +18,15 @@ public class InventoryMapper {
         return inventoryEntity;
     }
 
+    public static InventoryEntity mapOverOldEntity(Inventory inventory, InventoryEntity oldEntity){
+        oldEntity.setItemName(inventory.getItemName());
+        oldEntity.setPrice(inventory.getPrice());
+        oldEntity.setItemType(inventory.getItemType());
+        oldEntity.setNumberOfItems(inventory.getNumberOfItems());
+        oldEntity.setSeller(inventory.getSeller());
+        return oldEntity;
+    }
+
     public static Inventory map(InventoryEntity inventoryEntity){
         Inventory inventory = new Inventory();
         inventory.setId(inventoryEntity.getId());

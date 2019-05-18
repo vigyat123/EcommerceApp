@@ -2,7 +2,9 @@ package com.assignment.ecommerceApp.controllers;
 
 import com.assignment.ecommerceApp.dto.Inventory;
 import com.assignment.ecommerceApp.dto.InventoryPage;
-import com.assignment.ecommerceApp.dto.ItemType;
+import com.assignment.ecommerceApp.exceptions.NotFoundException;
+import com.assignment.ecommerceApp.repositories.InventoryEntity;
+import com.assignment.ecommerceApp.repositories.InventoryRepository;
 import com.assignment.ecommerceApp.services.InventoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -11,16 +13,20 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.Optional;
 
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
 public class InventoryController {
     private final InventoryService inventoryService;
+    private final InventoryRepository inventoryRepository;
 
     @Autowired
-    public InventoryController(final InventoryService inventoryService) {
+    public InventoryController(final InventoryService inventoryService,
+                               final InventoryRepository inventoryRepository) {
         super();
         this.inventoryService = inventoryService;
+        this.inventoryRepository = inventoryRepository;
     }
 
     @RequestMapping(
@@ -32,6 +38,23 @@ public class InventoryController {
     public @ResponseBody
     ResponseEntity<Void> addItem(@RequestBody @Valid final Inventory inventory){
         inventoryService.addItem(inventory);
+        return new ResponseEntity<>(HttpStatus.ACCEPTED);
+    }
+
+    @RequestMapping(
+            value = "/editItem/{id}",
+            method = RequestMethod.PUT,
+            consumes = MediaType.ALL_VALUE,
+            produces = MediaType.ALL_VALUE
+    )
+    public @ResponseBody
+    ResponseEntity<Void> editItem(@RequestBody @Valid final Inventory inventory,
+                                  @PathVariable("id") final Long id) throws Exception {
+        Optional<InventoryEntity> optionalInventoryEntity = inventoryRepository.findById(id);
+        if (!optionalInventoryEntity.isPresent()){
+            throw new NotFoundException("Item not available");
+        }
+        inventoryService.editItem(inventory, id, optionalInventoryEntity.get());
         return new ResponseEntity<>(HttpStatus.ACCEPTED);
     }
 
