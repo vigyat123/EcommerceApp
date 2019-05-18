@@ -80,7 +80,6 @@ public class InventoryController {
     public @ResponseBody
     InventoryPage getAllItems(@RequestParam(value = "pageIndex") final Integer pageIndex,
                               @RequestParam(value = "size") final Integer size){
-
         return inventoryService.getAllItems(pageIndex, size);
     }
 
