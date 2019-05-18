@@ -33,6 +33,7 @@ b) http://localhost:8080/deleteItemOfSeller/{item_name}/{seller}
    
 c) http://localhost:8080/getAllItems?pageIndex=0&size=2
 GET
+
 {pageIndex and Size} follow standard pagination settings
 
 d) http://localhost:8080/editItem/{id}
@@ -47,8 +48,8 @@ POST
 
 {
 "buyerEmail":"vigyattripathi@gmail.com",
-
 "itemsOrderedSet":[
+
 	{
 		"itemId":2,
 		"numberOfItems":1,
@@ -59,6 +60,7 @@ POST
 		"numberOfItems":1,
 		"priceOfItem":20000.0
 	}
+
 ]
 }
 
