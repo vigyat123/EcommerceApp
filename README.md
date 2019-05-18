@@ -30,7 +30,12 @@ b) http://localhost:8080/deleteItemOfSeller/{item_name}/{seller}
    
 c) http://localhost:8080/getAllItems?pageIndex=0&size=2
 GET
-{pageIndec and Size} follow standard pagination settings
+{pageIndex and Size} follow standard pagination settings
+
+d) http://localhost:8080/editItem/{id}
+PUT
+
+id is autoincrement id of inventory table
    
 3) OrdersController exposes the following apis:-
 a) http://localhost:8080/addToCart 
