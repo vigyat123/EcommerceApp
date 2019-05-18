@@ -41,10 +41,13 @@ PUT
 id is autoincrement id of inventory table
    
 3) OrdersController exposes the following apis:-
+
 a) http://localhost:8080/addToCart 
 POST
+
 {
 "buyerEmail":"vigyattripathi@gmail.com",
+
 "itemsOrderedSet":[
 	{
 		"itemId":2,
