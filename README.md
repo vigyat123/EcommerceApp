@@ -46,6 +46,7 @@ id is autoincrement id of inventory table
 a) http://localhost:8080/addToCart 
 POST
 
+
 {
 "buyerEmail":"vigyattripathi@gmail.com",
 "itemsOrderedSet":[
@@ -60,9 +61,9 @@ POST
 		"numberOfItems":1,
 		"priceOfItem":20000.0
 	}
-
 ]
 }
+
 
 ItemId is the autoIncrement datatable id
 b) http://localhost:8080/getAllOrders?pageIndex=0&size=2
