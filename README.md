@@ -65,7 +65,8 @@ POST
     }
 
 
-ItemId is the autoIncrement datatable id
+ItemId is the autoIncrement id of inventory table
+
 b) http://localhost:8080/getAllOrders?pageIndex=0&size=2
 GET
 
