@@ -82,18 +82,4 @@ public class InventoryController {
                               @RequestParam(value = "size") final Integer size){
         return inventoryService.getAllItems(pageIndex, size);
     }
-
-    /*@RequestMapping(
-            value = "/getAllItemsByItemType/{item_type}",
-            method = RequestMethod.GET,
-            consumes = MediaType.ALL_VALUE,
-            produces = MediaType.APPLICATION_JSON_VALUE
-    )
-    public @ResponseBody
-    InventoryPage getAllItemsByItemType(@RequestParam(value = "pageIndex") final Integer pageIndex,
-                              @RequestParam(value = "size") final Integer size,
-                              @PathVariable("item_type") final String itemType){
-
-        return inventoryService.getAllItemsByItemType(pageIndex, size, itemType);
-    }*/
 }
