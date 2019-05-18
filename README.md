@@ -72,6 +72,7 @@ GET
 
 c) http://localhost:8080/placeOrder/{order_id}
 PUT
+
 order_id is autoIncrement id of order table
 
 d) http://localhost:8080/cancelOrder/{order_id}
