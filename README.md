@@ -7,7 +7,6 @@ To setup the project on local machine in development environment:-
 5) Find the file EcommerceAppApplication.java and run it
 
                                     or
-
    Go to project root directory and run the command ./gradlew bootRun
 
 # Project Structure
