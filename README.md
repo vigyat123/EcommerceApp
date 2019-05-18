@@ -16,13 +16,13 @@ To setup the project on local machine in development environment:-
 a) http://localhost:8080/addItem 
 POST
 
-{
-"itemName":"Lenovo Thinkpad",
-"price":20000.00,
-"numberOfItems":2,
-"seller":"BlueCorp 2",
-"itemType":"LAPTOP"
-}
+    {
+        "itemName":"Lenovo Thinkpad",
+        "price":20000.00,
+        "numberOfItems":2,
+        "seller":"BlueCorp 2",
+        "itemType":"LAPTOP"
+    }
 
 If item with a given seller is already present then new no new record will be created but number of items in the already present record will get upated.
 
@@ -48,20 +48,20 @@ POST
 
 
 {
-"buyerEmail":"vigyattripathi@gmail.com",
-"itemsOrderedSet":[
+    "buyerEmail":"vigyattripathi@gmail.com",
+    "itemsOrderedSet":[
 
-	{
-		"itemId":2,
-		"numberOfItems":1,
-		"priceOfItem":200.0
-	},
-	{
-		"itemId":3,
-		"numberOfItems":1,
-		"priceOfItem":20000.0
-	}
-]
+	    {
+		    "itemId":2,
+		    "numberOfItems":1,
+	        "priceOfItem":200.0
+	    },
+	    {
+		    "itemId":3,
+		    "numberOfItems":1,
+		    "priceOfItem":20000.0
+	    }
+    ]
 }
 
 
