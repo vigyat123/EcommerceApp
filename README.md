@@ -11,8 +11,11 @@ To setup the project on local machine in development environment:-
 # Project Structure
 1) Two Contollers InventoryController and OrdersController.
 2) InventoryController exposes the following apis:-
+
+
 a) http://localhost:8080/addItem 
 POST
+
 {
 "itemName":"Lenovo Thinkpad",
 "price":20000.00,
