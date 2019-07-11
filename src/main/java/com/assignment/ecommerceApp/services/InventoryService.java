@@ -55,7 +55,7 @@ public class InventoryService {
         return new InventoryPage(InventoryMapper.mapInventories(inventories.getContent()), inventories.getTotalPages(), inventories.getTotalElements());
     }
 
-    public InventoryPage getAllItemsByItemType(Integer pageIndex, Integer size, String itemType) {
+    public InventoryPage getAllItemsByItemType(Integer pageIndex, Integer size, ItemType itemType) {
         final Pageable pageRequest = PageRequest.of(pageIndex, size, Sort.Direction.ASC, "id");
         final Page<InventoryEntity> inventories = inventoryRepository.findByItemType(itemType, pageRequest);
         return new InventoryPage(InventoryMapper.mapInventories(inventories.getContent()), inventories.getTotalPages(), inventories.getTotalElements());
