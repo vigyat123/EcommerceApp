@@ -14,7 +14,7 @@ public interface InventoryRepository extends JpaRepository<InventoryEntity, Long
     @Override
     Page<InventoryEntity> findAll(Pageable pageable);
 
-    Page<InventoryEntity> findByItemType(final String itemType, final Pageable pageable);
+    Page<InventoryEntity> findByItemType(final ItemType itemType, final Pageable pageable);
 
     Optional<InventoryEntity> findByItemNameAndSeller(final String itemName, final String seller);
 
