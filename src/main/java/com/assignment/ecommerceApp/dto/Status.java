@@ -1,9 +1,9 @@
 package com.assignment.ecommerceApp.dto;
 
-public class User {
+public class Status {
     private String status;
 
-    public User(String status) {
+    public Status(String status) {
         this.status = status;
     }
 
