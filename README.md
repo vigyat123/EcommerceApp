@@ -82,3 +82,5 @@ PUT
 # Few things to know
 1) The given project can handle single and bulk orders(see the above create order payload)
 2) OutOfStock is custom exception created to handle Out of stock type of cases
+
+Postman Collection link :- https://www.getpostman.com/collections/0b884f1d83b3c1c4e768
