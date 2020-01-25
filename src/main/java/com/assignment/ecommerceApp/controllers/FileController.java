@@ -24,7 +24,7 @@ public class FileController {
         this.fileRepository = fileRepository;
     }
 
-    /*@RequestMapping(
+    @RequestMapping(
             value = "/file",
             method = RequestMethod.POST,
             consumes = MediaType.ALL_VALUE,
@@ -38,26 +38,23 @@ public class FileController {
         }
             fileService.addFile(file);
         return new ResponseEntity<>(HttpStatus.CREATED);
-    }*/
+    }
 
     @RequestMapping(
             value = "/file/{id}",
             method = RequestMethod.GET,
             consumes = MediaType.ALL_VALUE,
-            produces = MediaType.ALL_VALUE
+            produces = MediaType.IMAGE_JPEG_VALUE
     )
     public @ResponseBody
-    File findFileById(@PathVariable("id") final Long fileId) {
+    ResponseEntity<byte[]> findFileById(@PathVariable("id") final Long fileId) {
         File file = null;
         try {
             file = fileService.findFileById(fileId);
         } catch (NotFoundException e) {
-//            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-            return file;
+            return new ResponseEntity<>(null,HttpStatus.NOT_FOUND);
 
         }
-//        return new ResponseEntity<>(file,HttpStatus.CREATED);
-        System.out.println(file);
-        return file;
+        return new ResponseEntity<>(file.getFile(),HttpStatus.ACCEPTED);
     }
 }
