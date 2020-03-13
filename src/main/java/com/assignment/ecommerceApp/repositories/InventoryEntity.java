@@ -1,6 +1,9 @@
 package com.assignment.ecommerceApp.repositories;
 
 import com.assignment.ecommerceApp.dto.ItemType;
+import org.hibernate.annotations.Filter;
+import org.hibernate.annotations.FilterDef;
+import org.hibernate.annotations.ParamDef;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -8,6 +11,8 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "inventory")
+@FilterDef(name = "tenantFilter", parameters = {@ParamDef(name = "tenant", type = "string")})
+@Filter(name = "tenantFilter", condition = "tenant = :tenant")
 public class InventoryEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,6 +34,9 @@ public class InventoryEntity {
     @Enumerated(EnumType.STRING)
     @Column(name = "item_type")
     private ItemType itemType;
+
+    @Column(name = "tenant")
+    private String tenant;
 
     public Long getId() {
         return id;
